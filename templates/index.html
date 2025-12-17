@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Detect Fake Voices with AI</h1>
+                <p class="lead mb-4">
+                    VoiceGuard uses advanced machine learning to analyze voice recordings 
+                    and detect synthetic or manipulated audio with high accuracy.
+                </p>
+                {% if not user %}
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="{{ url_for('register') }}" class="btn btn-light btn-lg px-4 me-md-2">
+                        <i class="fas fa-user-plus"></i> Get Started
+                    </a>
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg px-4">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </a>
+                </div>
+                {% else %}
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-light btn-lg px-4">
+                        <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-6 text-center">
+                <i class="fas fa-microphone-alt display-1"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-upload fa-3x text-primary mb-3"></i>
+                    <h4 class="card-title">Upload Voice</h4>
+                    <p class="card-text">Upload your voice recording in WAV or MP3 format for analysis.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                    <h4 class="card-title">AI Analysis</h4>
+                    <p class="card-text">Our advanced ML model analyzes 13+ audio features to detect authenticity.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                    <i class="fas fa-chart-bar fa-3x text-primary mb-3"></i>
+                    <h4 class="card-title">Get Results</h4>
+                    <p class="card-text">Receive instant results with confidence scores and detailed analysis.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h2 class="fw-bold mb-4">How It Works</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <h5><i class="fas fa-user-check text-primary"></i> 1. Create Account</h5>
+                        <p>Register for a free account to start analyzing voices.</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5><i class="fas fa-upload text-primary"></i> 2. Upload Recording</h5>
+                        <p>Upload your voice recording through our secure platform.</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5><i class="fas fa-cogs text-primary"></i> 3. AI Processing</h5>
+                        <p>Our system analyzes the audio using machine learning algorithms.</p>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <h5><i class="fas fa-chart-pie text-primary"></i> 4. View Results</h5>
+                        <p>Get detailed analysis results with confidence metrics.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fas fa-shield-alt display-1 text-primary"></i>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
